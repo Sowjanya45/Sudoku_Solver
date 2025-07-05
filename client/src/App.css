@@ -1,0 +1,222 @@
+:root {
+  --color1: #f6f1f5;        
+  --color1-dark: #e4d4dd;    
+  --color1-darker: #F8C8DC;  
+  --color2: #d1e8ff;        
+  --color2-dark: #a9c7f5;   
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--color2);
+  background-image: url('https://svgshare.com/i/13U4.svg'); 
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: top right;
+  background-attachment: fixed;
+}
+
+.Sudoku {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color2);
+  padding: 50px 20px;
+  min-height: 100vh;
+}
+
+.app-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--color2-darker);
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.tile, .initial {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 32px;
+  outline: none;
+  border: 2px solid var(--color1-darker);
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tile {
+  background-color: var(--color1);
+}
+
+.taken {
+  background-color: var(--color1-dark);
+  color: var(--color2-darker);
+  font-weight: bold;
+}
+
+.initial {
+  background-color: var(--color1-darker);
+  color: white;
+  border: 2px solid var(--color2-dark);
+}
+
+.interface {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.info-interface input {
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  outline: none;
+  color: var(--color2-darker);
+  background-color: var(--color1);
+  border: 2px solid var(--color2-dark);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-interface {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: var(--color1);
+  padding: 10px 24px;
+  border: 2px solid var(--color2-dark);
+  border-radius: 12px;
+  color: var(--color2-darker);
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.2s all ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 auto;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+  background-color: var(--color1-dark);
+}
+
+
+
+@media (max-width: 768px) {
+  .action-interface {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .action-interface button {
+    flex: 1 1 45%;
+  }
+
+  .board {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-interface button {
+    flex: 1 1 100%; 
+  }
+
+  .board {
+    transform: scale(0.75);
+    margin-bottom: 20px;
+  }
+
+  .app-title {
+    font-size: 28px;
+  }
+
+  .info-interface input {
+    width: 80%;
+    font-size: 20px;
+  }
+}
+:root {
+  --color1: #f6f1f5;
+  --color1-dark: #e4d4dd;
+  --color1-darker: #f8c8dc;
+  --color2: #d1e8ff;
+  --color2-dark: #a9c7f5;
+  --color2-darker: #6b9bd1;
+  --text-color: #1a1a1a;
+  --bg-color: var(--color2);
+}
+
+body.dark-mode {
+  --color1: #3a3b3f;       
+  --color1-dark: #4d4e52;   
+  --color1-darker: #5e5f64; 
+  --color2: #2e2f33;      
+  --color2-dark: #50535c;   
+  --color2-darker: #e0e0e0;
+  --text-color: #ffffff;
+  --bg-color: var(--color2);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: var(--color1);
+  border: 2px solid var(--color2-dark);
+  color: var(--color2-darker);
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.mode-toggle:hover {
+  background-color: var(--color1-dark);
+  transform: scale(1.05);
+}
+
+
