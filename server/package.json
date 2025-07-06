@@ -2,17 +2,20 @@
   "name": "sudoku-solver",
   "version": "1.0.0",
   "description": "",
-  "main": "SudokuSolver.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "start": "node index.js",        // ✅ Used by Render
+    "dev": "nodemon index.js",       // ✅ Optional, for local development
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
