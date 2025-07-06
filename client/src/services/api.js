@@ -1,12 +1,12 @@
 export const REST = {
   getBoard: function () {
-    return fetch(`http://localhost:5000/puzzle`);
+    return fetch(`https://sudoku-solver-1-3ud1.onrender.com/puzzle`);
   },
   solveBoard: function (grid) {
     const data = {
       board: grid,
     };
-    return fetch(`http://localhost:5000/solve`, {
+    return fetch(`https://sudoku-solver-1-3ud1.onrender.com/solve`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const REST = {
     const data = {
       board: grid,
     };
-    return fetch(`http://localhost:5000/validate`, {
+    return fetch(`https://sudoku-solver-1-3ud1.onrender.com/validate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
