@@ -6,7 +6,10 @@ import { Util } from "./Util.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://sudoku-solver1.vercel.app/", // allow frontend domain
+  methods: ["GET", "POST"]
+}));
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
