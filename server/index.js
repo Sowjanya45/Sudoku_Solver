@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://sudoku-solver1.vercel.app/", // allow frontend domain
+  origin: "https://sudoku-solver1.vercel.app", // allow frontend domain
   methods: ["GET", "POST"]
 }));
 
